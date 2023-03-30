@@ -1,0 +1,38 @@
+.downArrowWrapper {
+  position: absolute;
+  bottom:0;
+  height: 120px;
+  width: 100px;
+}
+
+.downArrow {
+  position: absolute;
+  bottom: 20px;
+  transform: translateX(50%);
+  background-color: rgb(var(--accent1-rgb));
+  height: 50px;
+  width: 50px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  animation: bounce 1s infinite cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.downArrowWrapper:hover > .downArrow {
+  animation: none;
+}
+
+@keyframes bounce {
+  0% {
+    bottom: 20px;
+  }
+  50% {
+    bottom: 50px;
+  }
+  100% {
+    bottom: 20px;
+  }
+}

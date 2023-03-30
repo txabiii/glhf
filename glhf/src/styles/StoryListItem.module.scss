@@ -1,0 +1,48 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  gap: 70px;
+  min-height: 263px;
+}
+
+.storyImage {
+  flex: 6;
+  position: relative;
+  height: auto;
+
+  img { object-fit: cover;}
+}
+
+.storyText {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .storyTitlePreview p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 5;
+    max-height: 6em;
+    word-wrap: break-word;
+  }
+}
+
+.articleTitle:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper { 
+    flex-direction: column;
+    gap: 45px;
+  }
+
+  .storyImage { height: 200px; flex: auto; }
+}
+
+@media screen and (max-width: 360px) {
+  .wrapper { gap: 30px; }
+}

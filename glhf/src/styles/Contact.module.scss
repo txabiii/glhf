@@ -1,0 +1,137 @@
+.contactImage {
+  padding-top: 78px;
+  height: 460px;
+  width: 100vw;;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .imgWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .contactTitle {
+    width: 30%;
+    position: absolute;
+    height: 100%;
+
+    img { pointer-events: none; }
+  }
+}
+
+.alert {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    margin-top: 0px !important;
+    background-color: transparent;
+    color: inherit;
+    padding: 0px;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.content {
+  position: absolute;
+  height: auto;
+  width: 100vw;
+  top: 460px;
+  z-index: 2;
+  background-color: rgb(var(--background-rgb));
+}
+
+.contactMain {
+  padding: 128px var(--side-margin);
+  display: flex;
+  gap: 130px;
+
+  .contactForm { 
+    flex: 7;
+    
+    .nameEmail > div { flex: 1;}
+
+    h1 { margin-bottom: 40px;}
+
+    label, input { width: 100%; }
+
+    input, textarea {
+      margin-top: 10px;
+      font-size: 16px;
+      border: none;
+      border-bottom: 3px solid black;
+    }
+
+    input:focus, textarea:focus {
+      outline: transparent;
+    }
+
+    textarea { 
+      resize: none;
+      width: 100%;
+    }
+
+    button { margin-top: 30px;}
+
+    .message {margin-top: 54px;}
+  }
+
+  .contactDetails { 
+    padding: 100px;
+    background-color: rgb(var(--background-secondary-rgb));
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.socialIcons {
+  filter: brightness(0%);
+
+  img { margin-right: 20px;}
+}
+
+.nameEmail {
+  margin-top: 50px;
+  display: flex;
+  gap: 35px;
+}
+
+@media screen and (max-width: 768px) {
+  .contactForm h1 { margin-bottom: 20px !important;}
+
+  .contactTitle { width: 50% !important; }
+
+  .contactMain {
+    padding: var(--side-margin) var(--side-margin) !important;
+    flex-direction: column;
+    gap: 65px;
+  }
+
+  .contactDetails {
+    gap: 30px;
+    padding: 50px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .contactTitle { width: calc(100vw - var(--side-margin)) !important;}
+
+  .contactDetails {
+    padding: 30px !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .socialIcons {
+    filter: inherit;
+  }
+}

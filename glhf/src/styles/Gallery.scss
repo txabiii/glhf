@@ -1,0 +1,92 @@
+.pop-up {
+  width: 100vw;
+  background-color: rgba(0,0,0,0.8);
+  position: fixed;
+  z-index: 3;
+  top: 0;
+
+  h2 { color: white}
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
+
+.pop-up-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  padding: 0;
+}
+
+.pop-up-dialog {
+  position: relative;
+  height: calc(100vh - 64px);
+  margin: 32px var(--side-margin);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.carousel-indicators {
+  visibility: hidden !important;
+}
+
+.carousel-img {
+  height: 50vh;
+  width: 100%;
+  object-fit: contain;
+  cursor: zoom-in;
+}
+
+.fullscreen {
+  cursor: zoom-out;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  width: 100%;
+  z-index: 4;
+}
+
+.small-carousel {
+  display: flex;
+  gap: 5px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+
+  .small-carousel-img {
+    height: 8vh;
+    width: 100px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .selected {
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    transition: border 0.5s;
+  }
+
+  .not-selected {
+    border: 2px solid transparent;
+    padding: 5px 0px;
+    border-radius: 5px;
+  }
+}
+
+.small-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.small-carousel {
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+}
