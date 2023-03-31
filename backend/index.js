@@ -11,13 +11,9 @@ const messages = require('./api/messages')
 
 const allowedOrigins = ['https://glhf-txabiii.vercel.app', 'https://glhf-txabiii.vercel.app']
 app.use(cors({
-  origin: function (origin, callback) {
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }))
 
 app.use(express.json({ extended: false }))
