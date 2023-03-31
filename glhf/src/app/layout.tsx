@@ -1,7 +1,7 @@
 'use client';
 import Head from 'next/head'
-import "./globals.scss"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./globals.scss"
 import React from "react";
 import { StoriesProvider } from '@component/context/StoriesContext';
 import Navbar from '@component/components/navbar';
