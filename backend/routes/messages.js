@@ -13,4 +13,12 @@ message.post("/messages/add", async function (req, res) {
     .catch((err) => res.status(400).json({status: 'fail', message: err}));
 })
 
+message.get("/messages", async function (req, res) {
+  res.send([
+    { name: "Ben", emailAddress: "ben@mail.com", message: "ben's message" },
+    { name: "Tim", emailAddress: "tim@mail.com", message: "ben's message" },
+    { name: "Eula", emailAddress: "eula@mail.com", message: "ben's message" },
+  ]);
+})
+
 module.exports = message;
