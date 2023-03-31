@@ -1,6 +1,5 @@
 'use client';
 import Head from 'next/head'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.scss"
 import React, { useEffect } from "react";
 import { StoriesProvider } from '@component/context/StoriesContext';
@@ -22,7 +21,7 @@ export default function RootLayout({
   useEffect(() => {
     scrollToTop();
   },[]);
-    
+
   return (
     <StoriesProvider>
       <html lang="en">
