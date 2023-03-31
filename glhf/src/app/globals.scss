@@ -105,6 +105,10 @@ button {
   color: white;
 }
 
+.carousel-indicators {
+  visibility: hidden !important;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

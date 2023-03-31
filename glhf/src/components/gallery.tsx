@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import { Carousel } from 'react-bootstrap'
-import { useState, useRef, useEffect } from 'react';
-import '../styles/Gallery.scss'
+import { useState, useRef, useEffect } from 'react'
+import styles from '../styles/Gallery.module.scss'
+import cx from 'classnames'
+// import '../styles/Gallery.scss'
 
 export default function Gallery({ show, handleClose, index, setIndex }: any) {
   const handleSelect = (selectedIndex:number) => {
@@ -9,8 +11,6 @@ export default function Gallery({ show, handleClose, index, setIndex }: any) {
   };
 
   const [fullScreen, setFullscreen] = useState(false);
-
-  const smallCarousel = useRef(null);
 
   const [images,setImages] = useState([
     { src:"/assets/gallery/gallery-1.jpg" },
@@ -46,9 +46,9 @@ export default function Gallery({ show, handleClose, index, setIndex }: any) {
   },[index])
   return (
     <>
-      <div className={`pop-up ${show ? 'show' : 'hidden'}`}>
-        <div className="pop-up-dialog">
-          <button className='pop-up-close' onClick={handleClose}>╳</button>
+      <div className={cx(styles.popUp, {[styles.show] : show}, {[styles.hidden] : !show})}>
+        <div className={styles.popUpDialog}>
+          <button className={styles.popUpClose} onClick={handleClose}>╳</button>
           <h2>Gallery</h2>
           <Carousel interval={null} activeIndex={index} onSelect={handleSelect}>
             {images.map((image, imgIndex)=>(
@@ -56,16 +56,17 @@ export default function Gallery({ show, handleClose, index, setIndex }: any) {
                   <img
                     src={image.src} 
                     alt=''
-                    className={`carousel-img ${fullScreen ? 'fullscreen' : ''}`}
+                    className={cx(styles.carouselImg, {[styles.fullScreen] : fullScreen})}
                     onClick={() => setFullscreen(!fullScreen)}
                   />
               </Carousel.Item>
             ))}
           </Carousel>
-          <div className="small-carousel" ref={smallCarouselRef}>
+          <div className={styles.smallCarousel} ref={smallCarouselRef}>
             {images.map((image, imgIndex)=>(
-              <div key={imgIndex} className={index === imgIndex ? 'selected' : 'not-selected'} onClick={() => handleSelect(imgIndex)} ref={index === imgIndex ? selectedRef : null}>
-                <img src={image.src} alt="" className='small-carousel-img'/>
+              /* className={index === imgIndex ? 'selected' : 'not-selected'} */
+              <div key={imgIndex} className={cx({[styles.selected] : index === imgIndex}, {[styles.notSelected] : index !== imgIndex})} onClick={() => handleSelect(imgIndex)} ref={index === imgIndex ? selectedRef : null}>
+                <img src={image.src} alt="" className={styles.smallCarouselImg}/>
               </div>
             ))}
           </div>
