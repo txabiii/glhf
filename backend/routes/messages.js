@@ -16,8 +16,8 @@ message.post("/messages/add", async function (req, res) {
 message.get("/messages", async function (req, res) {
   res.send([
     { name: "Ben", emailAddress: "ben@mail.com", message: "ben's message" },
-    { name: "Tim", emailAddress: "tim@mail.com", message: "ben's message" },
-    { name: "Eula", emailAddress: "eula@mail.com", message: "ben's message" },
+    { name: "Tim", emailAddress: "tim@mail.com", message: "tim's message" },
+    { name: "Eula", emailAddress: "eula@mail.com", message: "eula's message" },
   ]);
 })
 
