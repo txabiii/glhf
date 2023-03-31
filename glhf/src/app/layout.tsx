@@ -1,5 +1,5 @@
 'use client';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Head from 'next/head'
 import "./globals.scss"
 import React, { useEffect } from "react";
