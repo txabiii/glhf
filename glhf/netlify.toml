@@ -1,6 +1,0 @@
-[build]
-  command = "npx next build"
-  publish = ".next"
-
-[dev]
-  command = "npm install && npx next dev"
