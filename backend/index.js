@@ -9,7 +9,7 @@ const app = express()
 const stories = require('./api/stories')
 const messages = require('./api/messages')
 
-const allowedOrigins = ['https://glhf-txabiii.vercel.app/', 'https://glhf-txabiii.vercel.app/']
+const allowedOrigins = ['https://glhf-txabiii.vercel.app', 'https://glhf-txabiii.vercel.app']
 app.use(cors({
   origin: function (origin, callback) {
     if (allowedOrigins.indexOf(origin) !== -1) {
