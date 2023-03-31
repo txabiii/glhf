@@ -3,7 +3,6 @@ import { Carousel } from 'react-bootstrap'
 import { useState, useRef, useEffect } from 'react'
 import styles from '../styles/Gallery.module.scss'
 import cx from 'classnames'
-// import '../styles/Gallery.scss'
 
 export default function Gallery({ show, handleClose, index, setIndex }: any) {
   const handleSelect = (selectedIndex:number) => {
@@ -56,7 +55,7 @@ export default function Gallery({ show, handleClose, index, setIndex }: any) {
                   <img
                     src={image.src} 
                     alt=''
-                    className={cx(styles.carouselImg, {[styles.fullScreen] : fullScreen})}
+                    className={cx(styles.carouselImg, {[styles.fullScreen] : fullScreen}, {'' : !fullScreen})}
                     onClick={() => setFullscreen(!fullScreen)}
                   />
               </Carousel.Item>
@@ -64,7 +63,6 @@ export default function Gallery({ show, handleClose, index, setIndex }: any) {
           </Carousel>
           <div className={styles.smallCarousel} ref={smallCarouselRef}>
             {images.map((image, imgIndex)=>(
-              /* className={index === imgIndex ? 'selected' : 'not-selected'} */
               <div key={imgIndex} className={cx({[styles.selected] : index === imgIndex}, {[styles.notSelected] : index !== imgIndex})} onClick={() => handleSelect(imgIndex)} ref={index === imgIndex ? selectedRef : null}>
                 <img src={image.src} alt="" className={styles.smallCarouselImg}/>
               </div>

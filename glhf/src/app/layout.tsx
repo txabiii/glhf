@@ -2,7 +2,7 @@
 import Head from 'next/head'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.scss"
-import React from "react";
+import React, { useEffect } from "react";
 import { StoriesProvider } from '@component/context/StoriesContext';
 import Navbar from '@component/components/navbar';
 
@@ -19,6 +19,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode,
 }) {
+  useEffect(() => {
+    scrollToTop();
+  },[]);
+    
   return (
     <StoriesProvider>
       <html lang="en">
@@ -28,7 +32,7 @@ export default function RootLayout({
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <body onLoad={()=>scrollToTop()}>
+        <body>
           <main>
             <Navbar />
             { children }
