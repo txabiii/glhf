@@ -1,7 +1,7 @@
-const router = require('express').Router();
+const message = require('express').Router();
 let Message = require('../models/message.model');
 
-router.route('/add').post((req, res) => {
+message.post("/messages/add", async function (req, res) {
   const name = req.body.name;
   const emailAddress = req.body.emailAddress;
   const message = req.body.message;
@@ -13,4 +13,4 @@ router.route('/add').post((req, res) => {
     .catch((err) => res.status(400).json({status: 'fail', message: err}));
 })
 
-module.exports = router;
+module.exports = message;
