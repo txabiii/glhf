@@ -28,8 +28,13 @@ export default function RootLayout({
       <html lang="en">
         <Head>
           <title>Get Lost Have Fun</title>
-          <meta name="description" content="Travel Blog Website" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="keywords" content="travel, blog, manila" />
+          <meta name="title" property="og:title" content="Get Lost Have Fun"/>
+          <meta property="og:type" content="Website"/>
+          <meta name="image" property="og:image" content="https://imgur.com/a/2TdcF9A"/>
+          <meta name="description" property="og:description" content="GLHF: A Travel Blog Website"/>
+          <meta name="author" content="Txabi Guerrero"/>
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
