@@ -17,7 +17,7 @@ export default function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/messages/add', {
+      const response = await fetch('https://glhf-backend.vercel.app/api/messages/add', {
         method: 'POST',
         headers: {
           'Content-type' : 'application/json'

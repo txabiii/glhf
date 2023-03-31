@@ -37,7 +37,7 @@ const StoriesProvider = ({ children }: any) => {
 
   const fetchStories = () => {
     async function fetchData() {
-      const response = await fetch("http://localhost:5000/stories");
+      const response = await fetch("https://glhf-backend.vercel.app/api/stories");
       const data = await response.json();
       
       setStories(data);
