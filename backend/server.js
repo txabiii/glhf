@@ -4,7 +4,7 @@ const app = require("./app");
 
 const port = process.env.PORT || 5000;
 
-const uri = process.env.MONGODB_URL;
+const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true});
 const connection = mongoose.connection;
 connection.once('open', ()=>{
