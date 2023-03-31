@@ -9,6 +9,17 @@ const app = express()
 const stories = require('./api/stories')
 const messages = require('./api/messages')
 
+const allowedOrigins = ['https://glhf-txabiii.vercel.app/', 'https://glhf-txabiii.vercel.app/']
+app.use(cors({
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}))
+
 app.use(express.json({ extended: false }))
 app.get('/', (req, res) => res.send('This is an Express.js server'))
 
