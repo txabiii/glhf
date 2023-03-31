@@ -1,8 +1,16 @@
-const mongoose = require('mongoose');
-const routes = require("./routes/routes");
-const app = require("./app");
+'use strict'
 
-const port = process.env.PORT || 5000;
+require('dotenv').config();
+
+const express = require('express')
+const cors = require('cors')
+const mongoose = require('mongoose')
+const app = express()
+const stories = require('./api/stories')
+const messages = require('./api/messages')
+
+app.use(express.json({ extended: false }))
+app.get('/', (req, res) => res.send('This is an Express.js server'))
 
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true});
@@ -11,8 +19,8 @@ connection.once('open', ()=>{
   console.log("Mongoose database connection established succesfully!");
 })
 
-app.use("/", routes);
+app.use('/api/stories', stories)
+app.use('/api/messages', messages)
 
-app.listen(port, ()=>{
-  console.log(`Server is running on port: ${port}`);
-});
+const port = process.env.PORT || 3000
+app.listen(port, () =>   console.log(`Server is listening on port ${port}.`))
