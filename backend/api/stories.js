@@ -1,6 +1,12 @@
-const app = require("../app");
-const route = require("../routes/stories");
+const express = require("express");
+const router = express.Router();
 
-app.use("/api/", route);
+let Story = require('../models/story.model');
 
-module.exports = app;
+router.get("/", async (req, res) => {
+  Story.find()
+    .then(stories => res.json(stories))
+    .catch(err => res.status(400).json('Error: ' + err));
+})
+
+module.exports = router
