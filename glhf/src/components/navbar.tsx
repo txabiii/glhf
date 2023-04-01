@@ -1,8 +1,22 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 import styles from '../styles/Navbar.module.scss'
+import { useEffect } from "react";
+
+const isBrowser = () => typeof window !== "undefined";
+function scrollToTop() {
+  if (!isBrowser()) return;
+  setTimeout(() => {
+    window.document.body.scrollIntoView({ behavior: "smooth" });
+  }, 500);
+}
 
 export default function Navbar() {
+   useEffect(() => {
+    scrollToTop();
+  },[]);
+
   return (
     <nav className={styles.navbar}>
       <Link href='/'>
