@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Get Lost Have Fun',
     images: [
       {
-        url: 'https://i.imgur.com/Hj4YaqL.png',
+        url: 'https://i.imgur.com/YCSAWLK.png',
       }
     ],
     description: 'GLHF: A Travel Blog Website',
