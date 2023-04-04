@@ -3,11 +3,9 @@
 
 ![GLHF UI design](https://i.imgur.com/YCSAWLK.png)
 
-Get Lost Have Fun is a travel blog website that showcases the top travel spots and hidden gems in Metro Manila. Our goal is to inspire and guide travelers in exploring the beauty of the city through informative and entertaining blog posts.
+Get Lost Have Fun is a travel blog website that showcases the top travel spots and hidden gems in Metro Manila. It is designed to inspire and guide travelers in exploring the beauty of the city through informative and entertaining blog posts.
 
-At Get Lost Have Fun, we believe that traveling is all about experiencing new things, creating memories, and having fun. Our website is designed to be user-friendly and interactive, encouraging readers to explore the various destinations they can go to in the nation's capital.
-
-Whether you're a local or a tourist, Get Lost Have Fun is your go-to source for all things travel in Metro Manila. Join us on our journey and get lost in the beauty of the city.
+This is a personal project of mine to learn and grow my skills in developing websites using React with Next.js and TypeScript. I also used Bootstrap for some of the components of the website and SCSS for easier styling. The backend was made in Express.js and MongoDB as the database.
 
 ## Table of Contents
 
