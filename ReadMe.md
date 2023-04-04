@@ -1,6 +1,8 @@
 # GLHF 🗺️
 ## Get Lost Have Fun: A Travel Blog Website 
 
+![GLHF UI design](https://i.imgur.com/YCSAWLK.png)
+
 Get Lost Have Fun is a travel blog website that showcases the top travel spots and hidden gems in Metro Manila. Our goal is to inspire and guide travelers in exploring the beauty of the city through informative and entertaining blog posts.
 
 At Get Lost Have Fun, we believe that traveling is all about experiencing new things, creating memories, and having fun. Our website is designed to be user-friendly and interactive, encouraging readers to explore the various destinations they can go to in the nation's capital.
